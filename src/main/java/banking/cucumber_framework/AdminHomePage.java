@@ -70,5 +70,10 @@ public class AdminHomePage {
 		return PageFactory.initElements(driver, EmployeeDetailsPage.class);
 	}
 	
+	
+	// verify logout link is displayed or not
+	public boolean isLogoutLinkDisplayed() {
+		return this.logout.isDisplayed();
+	}
 
 }
