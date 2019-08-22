@@ -8,9 +8,10 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		dryRun = false,
-		features = {"src/test/java/features"},
+		features = {"src/test/java/features/role_creation.feature"},
 		glue = {"stepdefinitions"},
-		monochrome = true
+		monochrome = true,
+		plugin = {"html:target/reports"}
 		)
 public class TestRunner {
 

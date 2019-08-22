@@ -1,6 +1,7 @@
 package banking.cucumber_framework;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -58,6 +59,12 @@ public class RoleCreationPage {
 	public RoleDetailsPage clickCancel() {
 		this.cancel.click();
 		return PageFactory.initElements(driver, RoleDetailsPage.class);
+	}
+	
+	public boolean isFormReset() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String roleNameValue = js.executeScript("return arguments[0].value", this.roleName).toString();
+		return roleNameValue.isEmpty();
 	}
 
 }
