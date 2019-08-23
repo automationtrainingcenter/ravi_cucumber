@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		dryRun = false,
-		features = {"src/test/java/features/role_creation.feature"},
+		features = {"src/test/java/features/branch_creation.feature"},
 		glue = {"stepdefinitions"},
 		monochrome = true,
 		plugin = {"html:target/reports"}
