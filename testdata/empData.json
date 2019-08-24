@@ -1,0 +1,27 @@
+[
+	{
+		"empName" : "empOne",
+		"password" : "password123",
+		"role" : "tester",
+		"branch" : "srnagar"
+	},
+	{
+		"empName" : "empTwo",
+		"password" : "password321",
+		"role" : "tester",
+		"branch" : "srnagar"
+	},
+	{
+		"empName" : "empThree",
+		"password" : "password123",
+		"role" : "tester",
+		"branch" : "srnagar"
+	},
+	{
+		"empName" : "empFour",
+		"password" : "password123",
+		"role" : "tester",
+		"branch" : "srnagar"
+	}
+	
+]

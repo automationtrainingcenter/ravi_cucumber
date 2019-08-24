@@ -1,6 +1,8 @@
 package stepdefinitions;
 
+
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Assert;
 import org.openqa.selenium.support.PageFactory;
@@ -86,5 +88,30 @@ public class BranchCreationSteps extends BrowserHelper{
 	    	System.out.println(driver.switchTo().alert().getText());
 	    	driver.switchTo().alert().accept();
 	    }
+	}
+	
+	@When("user clicks on cancel button after filling form with valid data user can see branch details page")
+	public void user_clicks_on_cancel_button_after_filling_form_with_valid_data_user_can_see_branch_details_page(DataTable dataTable) {
+	    // Write code here that turns the phrase above into concrete actions
+	    // For automatic transformation, change DataTable to one of
+	    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+	    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+	    //
+	    // For other transformations you can register a DataTableType.
+		
+		List<Map<String, String>> branchData = dataTable.asMaps();
+		for(Map<String, String> branch : branchData) {
+			branchCreationPage.fillbranchName(branch.get("branchName"));
+			branchCreationPage.fillAdress1(branch.get("address1"));
+			branchCreationPage.fillZipcode(branch.get("zipcode"));
+			branchCreationPage.selectcountry(branch.get("country"));
+			branchCreationPage.selectstate(branch.get("state"));
+			branchCreationPage.selectcity(branch.get("city"));
+			BranchDetailsPage branchDetailsPage = branchCreationPage.clickCancel();
+			Assert.assertTrue(branchDetailsPage.isPageDisplayed());
+			branchCreationPage = branchDetailsPage.clickNewbranch();
+		}
+	    
 	}
 }

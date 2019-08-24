@@ -21,5 +21,9 @@ public class BranchDetailsPage {
 		this.newbranch.click();
 		return PageFactory.initElements(driver, BranchCreationPage.class);
 	}
+	
+	public boolean isPageDisplayed() {
+		return this.newbranch.isDisplayed();
+	}
 
 }

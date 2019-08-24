@@ -6,6 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import banking.cucumber_framework.AdminHomePage;
 import banking.cucumber_framework.BankHomePage;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -14,10 +16,19 @@ import utitlities.BrowserHelper;
 public class LoginSteps extends BrowserHelper {
 
 	BankHomePage bankHomePage;
+	
+	@Before
+	public void launch() {
+		openBrowser("chrome", "http://primusbank.qedgetech.com/");
+	}
+	
+	@After
+	public void tearDown() {
+		closeBrowser();
+	}
 
 	@Given("user is in bank home page")
-	public void user_is_in_bank_home_page() {
-		openBrowser("chrome", "http://primusbank.qedgetech.com/");
+	public void user_is_in_bank_home_page() {	
 		bankHomePage = new BankHomePage(driver);
 	}
 
@@ -40,7 +51,7 @@ public class LoginSteps extends BrowserHelper {
 	public void user_can_see_admin_home_page_with_logout_link() {
 		AdminHomePage adminHomePage = PageFactory.initElements(driver, AdminHomePage.class);
 		Assert.assertTrue(adminHomePage.isLogoutLinkDisplayed());
-		driver.close();
+		
 	}
 
 	@When("user enters invalid password")
@@ -54,7 +65,7 @@ public class LoginSteps extends BrowserHelper {
 		String alertText = alert.getText();
 		alert.accept();
 		Assert.assertTrue(alertText.toLowerCase().contains("incorrect"));
-		driver.close();
+	
 	}
 
 	@When("user enters invalid username")

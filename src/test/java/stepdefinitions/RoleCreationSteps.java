@@ -60,7 +60,7 @@ public class RoleCreationSteps extends BrowserHelper{
 	   String alertText = alert.getText();
 	   alert.accept();
 	   Assert.assertTrue(alertText.toLowerCase().contains("new role123"));
-	   driver.close();
+	   
 	}
 	
 	@When("user clicks on reset button")
@@ -71,7 +71,7 @@ public class RoleCreationSteps extends BrowserHelper{
 	@Then("user can see empty role creation form")
 	public void user_can_see_empty_role_creation_form() {
 	  Assert.assertTrue(roleCreationPage.isFormReset());
-	  driver.close();
+	  
 	}
 
 }

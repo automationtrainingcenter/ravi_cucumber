@@ -86,8 +86,9 @@ public class BranchCreationPage {
 		this.Reset.click();
 	}
 
-	public void clickCancel() {
+	public BranchDetailsPage clickCancel() {
 		this.Cancel.click();
+		return PageFactory.initElements(driver, BranchDetailsPage.class);
 	}
 
 	public boolean isFormReset() {

@@ -9,6 +9,9 @@ formatter.background({
   "description": "",
   "keyword": "Background"
 });
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "user is in bank home page",
   "keyword": "Given "
@@ -50,45 +53,73 @@ formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "verfiy branch creation with multiple invalid branch names",
+  "name": "verify branch creation cancel with multiple data",
   "description": "",
   "keyword": "Scenario"
 });
 formatter.step({
-  "name": "user enters invalid branch name user can see error message",
+  "name": "user clicks on cancel button after filling form with valid data user can see branch details page",
   "rows": [
     {
       "cells": [
-        "branch@12"
+        "branchName",
+        "address1",
+        "zipcode",
+        "country",
+        "state",
+        "city"
       ]
     },
     {
       "cells": [
-        "branch@13"
+        "branchOne",
+        "miyapur",
+        "50051",
+        "INDIA",
+        "Delhi",
+        "Delhi"
       ]
     },
     {
       "cells": [
-        "branch@14"
+        "branchTwo",
+        "mirazapur",
+        "50049",
+        "INDIA",
+        "Delhi",
+        "Delhi"
       ]
     },
     {
       "cells": [
-        "branch@15"
+        "branchThree",
+        "ameenpur",
+        "50052",
+        "INDIA",
+        "Delhi",
+        "Delhi"
       ]
     },
     {
       "cells": [
-        "branch@15"
+        "branchFour",
+        "mgroad",
+        "50051",
+        "INDIA",
+        "Delhi",
+        "Delhi"
       ]
     }
   ],
   "keyword": "When "
 });
 formatter.match({
-  "location": "BranchCreationSteps.user_enters_invalid_branch_name_as_branchName_user_can_see_error_message(DataTable)"
+  "location": "BranchCreationSteps.user_clicks_on_cancel_button_after_filling_form_with_valid_data_user_can_see_branch_details_page(DataTable)"
 });
 formatter.result({
+  "status": "passed"
+});
+formatter.after({
   "status": "passed"
 });
 });
