@@ -1,3 +1,4 @@
+@role
 Feature: As a admin I want to create Role so that I can add employees under the roles
 
   Background: 
@@ -5,13 +6,14 @@ Feature: As a admin I want to create Role so that I can add employees under the 
     And user do login with valid credentials
     And user click on role button in Admin home page
     And user click on new role button in role details page
-
+	@create @valid
   Scenario: Role creation with valid data
-    When user enters role name as "AdminstratorONE"
+    When user enters role name as "AdminstratorTEN"
     And user selects role type as "E"
     And user clicks on submit button
     Then user can see a message role created successully
 
+	@reset @valid
   Scenario: Role creation reset with valid data
    	When user enters role name as "AdminOne"
    	And user selects role type as "E"

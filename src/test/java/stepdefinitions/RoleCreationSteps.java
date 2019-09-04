@@ -59,7 +59,7 @@ public class RoleCreationSteps extends BrowserHelper{
 	public void user_can_see_a_message_role_created_successully() {
 	   String alertText = alert.getText();
 	   alert.accept();
-	   Assert.assertTrue(alertText.toLowerCase().contains("new role123"));
+	   Assert.assertTrue(alertText.toLowerCase().contains("new role"));
 	   
 	}
 	

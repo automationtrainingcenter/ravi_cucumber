@@ -1,5 +1,7 @@
+@employee
 Feature: employee creation using json data
 
+@create @valid @json_data
 Scenario: employee creation with valid data from json file
 	  Given user is in bank home page
     And user do login with valid credentials
